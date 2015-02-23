@@ -33,6 +33,7 @@ Presentation Outline
        * Options Menu
          * Before Android 3.0
          * Android 3.0 and Later
+       * Overview Screen
      * Themes
        * Holo Light
        * Holo Dark
@@ -45,6 +46,7 @@ Presentation Outline
 
  * Android Architecture Ideas (Just showing/defining use, not how to make)
    * Activity
+   * Tasks
    * Intent
    * Service
    * Lifecycle

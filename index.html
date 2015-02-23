@@ -187,7 +187,7 @@ etc...
         <section>
           <!-- TODO: This slide seems a bit blank. Maybe add art? -->
           <h1>
-            Android Design Phrases
+            Android Design
           </h1>
         </section>
 
@@ -498,6 +498,16 @@ etc...
               <source data-src="media/example_options.webm" />
             </video>
           </section>
+
+          <!-- Slide 8h: Overview Screen -->
+          <section>
+            <h2>
+              Overview Screen
+            </h2>
+            <!-- Not really strucural design, but this is the best place I could fit this. -->
+            <!-- TODO: Get Overview Screen screenshot -->
+            <img height="500" data-src="media/TEMPLATE.png" alt="overview screen">
+          </section>
         </section>
 
 
@@ -551,9 +561,112 @@ etc...
           <p>
             Provides a screen with which users can interact in order to do something
           </p>
+          <!-- This example shows the user going between 2 different activities. -->
+          <video loop data-autoplay height="400" data-fragment-index="0" class="fragment">
+            <source data-src="media/example_actionbar.webm" />
+          </video>
           <aside class="notes">
-            An application usually has multiple of these. Each one is placed on the "back stack".
+            An application usually has multiple of these, but only 1 "main" task. Each one is placed on the
+            "back stack". Each one should be designed around a specific kind of action.
           </aside>
+        </section>
+
+        <!-- Slide 13: Task -->
+        <section>
+          <h2>
+            Task
+          </h2>
+          <p>
+            Collection of Activities
+            <br />
+            Saved Back Stack
+          </p>
+          <img height="400" data-src="media/TEMPLATE.png" alt="overview screen">
+          <aside class="notes">
+            Home button doesn't destroy backstack. Resume a task with the "Overview Screen".
+          </aside>
+        </section>
+
+        <!-- Slide 14: Intent -->
+        <section>
+
+          <!-- Slide 14a: Definition -->
+          <section>
+            <h2 style="margin-bottom: 75px;">
+              Intent
+            </h2>
+            <p>
+              Start an Activity
+            </p>
+            <p>
+              Start a Service
+            </p>
+            <p>
+              Broadcast a Message
+            </p>
+            <aside class="notes">
+              This is how you can navigate around your own app. Might be thinking: "create intent to start my own
+              activity? too much work. I'll just clear the screen and redraw what I want." Bad coding (no modules),
+              breaks Android UX. (Also, good luck dealing with multiple screen sizes)
+              <br />
+              Every app recieves a broadcast. Example messages: system boot up, device charging, timezone change.
+            </aside>
+          </section>
+
+          <!-- Slide 14b: Components -->
+          <section>
+            <h3>
+              Components of an Intent
+            </h3>
+            <p>
+              <ul>
+                <li>Component Name (Optional)</li>
+                <li>Category</li>
+                <li>Action</li>
+                <li>Data</li>
+                <li>Extras</li>
+                <li>Flags</li>
+              </ul>
+            </p>
+            <aside class="notes">
+              Real power of Intents lays here.
+              <ul>
+                <li>Specifying a component name makes the intent explicit.</li>
+                <li>Category defines what type of app can open it. (Gallery, Maps, Market, Contacts, email).</li>
+                <li>Action defines the exact thing the activity should do when it recieves it. (View, send, edit)</li>
+                <li>Data is a URI that references the data the action is occuring to.</li>
+                <li>Extras is how you pass data long.</li>
+                <li>Flags do stuff specific to how the OS should handle it.</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <!-- Slide 15: Services -->
+        <section>
+          <h2 style="margin-bottom:75px;">
+            Services
+          </h2>
+          <p>
+            Does background processing
+          </p>
+          <p data-fragment-index="0" class="fragment">
+            Music Playing
+            <br />
+            Network Transactions
+          </p>
+          <aside class="notes">
+            Works in the shadows. Can be bound (acting like server/client), or work indefinitely.
+          </aside>
+        </section>
+
+        <!-- Slide 16: The Lifecycle -->
+        <section>
+          <h2>
+            Android Lifecycle
+          </h2>
+          <!-- TODO: replace most of the fixed height things in here with class=stretch -->
+          <img class="stretch" data-src="media/TEMPLATE.png" alt="android lifecycle">
         </section>
 
       </div>    <!-- end div="slides" -->
