@@ -68,8 +68,9 @@ Presentation Outline
    * Layouts
      * Linear Layouts
      * Table Layout
-     * Grid Layout
      * Relative Layout
+     * Grid View
+     * List View
    * Properties
      * Width/Height
      * Padding
