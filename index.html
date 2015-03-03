@@ -845,6 +845,7 @@ etc...
             Frame essentially centers. Linear has horizontal and vertical. Grid can specify row column width. Relative
             is most versatile.
           </aside>
+          <!-- Perhaps add a screenshot of the widgets list to the left/right -->
         </section>
 
 
@@ -858,6 +859,7 @@ etc...
             <li>EditText</li>
             <li><i>Most Afformentioned Components</i></li>
           </ul>
+          <!-- Perhaps add a screenshot of the widgets list to the left/right -->
         </section>
 
 
@@ -884,8 +886,113 @@ etc...
             <li>Background/Object Colors</li>
             <li>ID</li>
           </ul>
+          <!-- Perhaps add a screenshot of the properites menu to the left/right -->
+          <aside class="notes">
+            But notice these properties don't allow for GREAT diversity of screen sizes.
+          </aside>
         </section>
 
+        <!-- If I have time, I might want to add the recreation of popular apps' structure here -->
+
+
+        <!-- Slide 29: The Resource Folder -->
+        <section>
+          <h2>
+            Resource Folder
+          </h2>
+          <img class="stretch" data-src="media/resource_expanded.png" alt="res folder completely expanded">
+          <aside class="notes">
+            <ul>
+              <li>Strings is for localization</li>
+              <li>Drawables is for high/low resolution</li>
+              <li>Styles is for reusing catering to different device styles</li>
+              <li>Layouts is for Orientation/Screen size</li>
+            </ul>
+            Power for Cross platforming
+          </aside>
+        </section>
+
+
+        <!-- Slide 30: Activity Code -->
+        <section>
+
+          <!-- Slide 30a: Activity Code -->
+          <section>
+            <h2>
+              The Activity Code
+            </h2>
+            <!-- This is the code you get when you create a new activity -->
+            <pre class="java">
+<code>public class MainACMActivity extends ActionBarActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_acm);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main_acm, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}
+              </code>
+            </pre>
+            <aside class="notes">
+              This is where you put all the code for your app. Note the Lifecycle function calls. Important that not all
+              of your code goes here. You can make your own classes, and pass them around.
+            </aside>
+          </section>
+
+          <!-- Slide 30b: Lifecyle Reference -->
+          <section>
+            <img class="stretch" data-src="media/lifecycle.png" alt="android lifecycle">
+          </section>
+        </section>
+
+
+        <!-- Slide 31: Resource Referencing -->
+        <section>
+          <h2>
+            Resource Referencing
+          </h2>
+          <pre class="java">
+<code>userNameField = (EditText) findViewById(R.id.userName);
+            </code>
+          </pre>
+          <pre class="java fragment" data-fragment-index="0">
+<code>userNameField.getText().toString();
+            </code>
+          </pre>
+          <!-- http://developer.android.com/reference/android/widget/EditText.html -->
+          <aside class="notes">
+            This is where I'll leave you to do your own looking up the documentation because its a good skill and also I
+            can't go over everyting in 1 night.
+          </aside>
+        </section>
+
+        <!-- Slide 32: Storage Methods -->
+        <section>
+
+        </section>
 
       </div>    <!-- end div="slides" -->
     </div>      <!-- end div="reveal" -->
