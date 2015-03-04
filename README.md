@@ -5,12 +5,5 @@ University's ACM meeting. For an outline of the presentation, don't forget to ch
 
 The presentation can be viewed [here](http://dlopreiato.github.io/Android-Presentation/).
 
-Most of the media in the presentation was recorded by myself on my phone. As a note to myself, this is the ffmpeg
-command that makes the video smaller and webm format.
-```
-ffmpeg -i PATH_TO_INPUT -vf scale=-1:720 PATH_TO_OUTPUT
-```
-This next one not only scales it, but also takes the first 4.5 seconds of the video.
-```
-ffmpeg -ss 00:00:00 -t 00:00:04.5 -i PATH_TO_INPUT -vf scale=-1:720 PATH_TO_OUTPUT
-```
+Most of the media in the presentation was recorded by myself on my phone, and falls under the same license as the
+source.

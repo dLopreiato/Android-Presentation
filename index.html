@@ -172,7 +172,6 @@ etc...
 
         <!-- Slide 5: Android Design Concepts -->
         <section>
-          <!-- TODO: This slide seems a bit blank. Maybe add art? -->
           <h1>
             Android Design
           </h1>
@@ -469,7 +468,7 @@ etc...
           <section>
             <h2>
               Lists
-            </h2> <!-- TODO: Make this more specific to the presentation -->
+            </h2>
             <img class="stretch" data-src="media/android_in_use.png" alt="lists">
           </section>
 
@@ -501,13 +500,13 @@ etc...
             <h2>
               Overview Screen
             </h2>
-            <!-- Not really strucural design, but this is the best place I could fit this. -->
+            <!-- Not really structural design, but this is the best place I could fit this. -->
             <img class="stretch" data-src="media/example_overview.png" alt="overview screen">
           </section>
         </section>
 
 
-        <!-- Slide 9: Android Themeing -->
+        <!-- Slide 9: Android Theming -->
         <section>
           <h2>
             Themes
@@ -539,7 +538,6 @@ etc...
 
         <!-- Slide 11: Android Application Architecture -->
         <section>
-          <!-- TODO: This slide seems a bit blank. Maybe add art? -->
           <h1>
             Android Application Architecture
           </h1>
@@ -577,7 +575,6 @@ etc...
           <aside class="notes">
             Home button doesn't destroy backstack. Resume a task with the "Overview Screen". Task is not an app.
           </aside>
-          <!-- TODO: Put in example of multiple activies from different apps, in one task -->
         </section>
 
         <!-- Slide 14: Intent -->
@@ -602,7 +599,7 @@ etc...
               activity? too much work. I'll just clear the screen and redraw what I want." Bad coding (no modules),
               breaks Android UX. (Also, good luck dealing with multiple screen sizes)
               <br />
-              Every app recieves a broadcast. Example messages: system boot up, device charging, timezone change.
+              Every app receives a broadcast. Example messages: system boot up, device charging, timezone change.
             </aside>
           </section>
 
@@ -626,8 +623,8 @@ etc...
               <ul>
                 <li>Specifying a component name makes the intent explicit.</li>
                 <li>Category defines what type of app can open it. (Gallery, Maps, Market, Contacts, email).</li>
-                <li>Action defines the exact thing the activity should do when it recieves it. (View, send, edit)</li>
-                <li>Data is a URI that references the data the action is occuring to.</li>
+                <li>Action defines the exact thing the activity should do when it receives it. (View, send, edit)</li>
+                <li>Data is a URI that references the data the action is occurring to.</li>
                 <li>Extras is how you pass data long.</li>
                 <li>Flags do stuff specific to how the OS should handle it.</li>
               </ul>
@@ -829,7 +826,7 @@ etc...
             Configurability
           </p>
           <aside class="notes">
-            Not only is separation of view and model good programming, its also nessesary when android is as diverse of
+            Not only is separation of view and model good programming, its also necessary when android is as diverse of
             a platform as it is.
           </aside>
         </section>
@@ -863,7 +860,7 @@ etc...
           <ul>
             <li>TextView</li>
             <li>EditText</li>
-            <li><i>Most Afformentioned Components</i></li>
+            <li><i>Most Aforementioned Components</i></li>
           </ul>
           <!-- Perhaps add a screenshot of the widgets list to the left/right -->
         </section>
@@ -918,10 +915,10 @@ etc...
         </section>
         
 
-        <!-- Slide x: Activity Code -->
+        <!-- Slide 30: Activity Code -->
         <section>
 
-          <!-- Slide xa: Activity Code -->
+          <!-- Slide 30a: Activity Code -->
           <section>
             <h2>
               The Activity Code
@@ -967,12 +964,12 @@ etc...
             </aside>
           </section>
 
-          <!-- Slide xb: Lifecyle Reference -->
+          <!-- Slide 30b: Lifecyle Reference -->
           <section>
             <img class="stretch" data-src="media/lifecycle.png" alt="android lifecycle">
           </section>
 
-          <!-- Slide xc: Examples of the on onStop function -->
+          <!-- Slide 30c: Examples of the on onStop function -->
           <section>
             <h2>
               Implementing a Lifecycle Function
@@ -990,9 +987,9 @@ public void onStop() {
         </section>
 
 
-        <!-- Slide x: Resource Referencing -->
+        <!-- Slide 31: Resource Referencing -->
         <section>
-          <!-- Slide xa: The folder -->
+          <!-- Slide 31a: The folder -->
           <section>
             <h2>
               Resource Referencing : The Folder
@@ -1009,7 +1006,7 @@ public void onStop() {
             </aside>
           </section>
 
-          <!-- Slide xb: The code -->
+          <!-- Slide 31b: The code -->
           <section>
             <h2>
               Resource Referencing: The Code
@@ -1025,17 +1022,17 @@ public void onStop() {
             <!-- Edit Text Source: http://developer.android.com/reference/android/widget/EditText.html -->
             <aside class="notes">
               This is where I'll leave you to do your own looking up the documentation because its a good skill and also I
-              can't go over everyting in 1 night.
+              can't go over everything in 1 night.
             </aside>
           </section>
       </section>
 
 
-        <!-- Slide x: Storage Methods -->
+        <!-- Slide 32: Storage Methods -->
         <section>
           <!-- Source: http://developer.android.com/guide/topics/data/data-storage.html -->
           
-          <!-- Slide xa: Data Storage -->
+          <!-- Slide 32a: Data Storage -->
           <section>
             <h1>
               Data Storage
@@ -1045,7 +1042,7 @@ public void onStop() {
             </aside>
           </section>
 
-          <!-- Slide xb: Shared Preferences -->
+          <!-- Slide 32b: Shared Preferences -->
           <section>
             <h2>
               Shared Preferences
@@ -1071,10 +1068,12 @@ int distanceToYourAddress = uptownFunk.getInt("toYA", DEFAULT_INT);
               getSharedPreferences() comes from a context (your activity)
               <br />
               Good for user preferences. Is shared within a context.
+              <br />
+              "Uptown Funk gon give int toYa"
             </aside>
           </section>
 
-          <!-- Slide xc: External Storage -->
+          <!-- Slide 32c: External Storage -->
           <section>
             <h2>
               Internal/External Storage
@@ -1097,14 +1096,14 @@ fileStream.close();</code>
     "myPicture.png");</code>
             </pre>
             <aside class="notes">
-              Internal: Works just like JavaIO. Only accessable to you. Not even user when USB plugged in.
+              Internal: Works just like JavaIO. Only accessible to you. Not even user when USB plugged in.
               <br />
               External: Requires permission WRITE_EXTERNAL_STORAGE. Can write to SD or just onboard memory.
               Point is: its public.
             </aside>
           </section>
 
-          <!-- Slide xd: Database -->
+          <!-- Slide 32d: Database -->
           <section>
             <h2>
               Database
@@ -1119,7 +1118,7 @@ fileStream.close();</code>
             </aside>
           </section>
 
-          <!-- Slide xe: Network -->
+          <!-- Slide 32e: Network -->
           <section>
             <h2>
               Network
@@ -1137,7 +1136,7 @@ android.net.*</code>
 
 
 
-        <!-- Slide x: Adapters -->
+        <!-- Slide 33: Adapters -->
         <section>
           <h2>
             Adapters
@@ -1165,9 +1164,13 @@ protected void onCreate(Bundle savedInstanceState) {
 }
     </code>
           </pre>
+          <aside class="notes">
+            This just creates a list of strings. To create your own list, make a custom layout, and extend the adapter
+            class.
+          </aside>
         </section>
 
-        <!-- Slide x: Java Libraries -->
+        <!-- Slide 34: Java Libraries -->
         <section>
           <h2>
             And don't forget...
@@ -1181,13 +1184,12 @@ protected void onCreate(Bundle savedInstanceState) {
         </section>
 
 
-        <!-- Slide x: Manifest -->
+        <!-- Slide 35: Manifest -->
         <section>
           <h2>
             The Manifest
           </h2>
-          <div class="stretch fragment" data-fragment-index="0">
-            <pre class="stretch xml" style="width: 100%;">
+          <pre class="stretch xml" style="width: 100%;">
 <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
     package=&quot;us.lopreiato.acm_presentation&quot; &gt;
@@ -1209,15 +1211,30 @@ protected void onCreate(Bundle savedInstanceState) {
     &lt;/application&gt;
 &lt;/manifest&gt;
 </code>
-           </pre>
-          </div>
+          </pre>
           <aside class="notes">
-            We're almost done going through everything you need to know about programming for Android.
+            And this is it. This is all you need to know.
             <br />
             Simple but important. Tells the OS what you want to do, and how it should interact with your app.
             <br />
             Also can declare a use of a feature, library, or permission. Declare as a service.
           </aside>
+        </section>
+
+
+        <!-- Slide 36:Finishing Slide -->
+        <section>
+          <h1>
+            Thank you
+          </h1>
+          <p class="fragment" data-fragment-index="0">
+            Visit my Github for the source where I left more comments.
+            <br />
+            <small><a href="http://github.com/dLopreiato">http://github.com/dLopreiato</a></small>
+          </p>
+          <p class="fragment" data-fragment-index="1">
+            Made with <a href="https://github.com/hakimel/reveal.js">reveal.js</a>
+          </p>
         </section>
 
       </div>    <!-- end div="slides" -->
