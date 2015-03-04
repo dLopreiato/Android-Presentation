@@ -760,24 +760,30 @@ etc...
           <div data-fragment-index="0" class="fragment">
             Describes data
             <br />
-            <small>Really Inefficiently</small>
+            <small>Really Inefficiently and Unreliably</small>
           </div>
           <div data-fragment-index="1" class="fragment">
             <pre class="xml stretch">
-<code><stuff_i_hate>
-  <thing>
-    <name>West Cookies</name>
-    <description>
-      They're not as good as you think. Get over yourself.
-    </description>
-  </thing>
-  <thing>
-    <name>XML</name>
-    <description>
-      Extremely lengthy, could have used quotation marks but NOOOOOO that'd be too convenient.
-    </description>
-  </thing>
-</stuff_i_hate>
+<code>&lt;stuff_i_hate&gt;
+  &lt;thing&gt;
+    &lt;name&gt;Pitbull&lt;/name&gt;
+    &lt;description&gt;
+      For writing the lyrics "Or should I say, I saw, I conquered, I came"
+    &lt;/description&gt;
+  &lt;/thing&gt;
+  &lt;thing&gt;
+    &lt;name&gt;XML&lt;/name&gt;
+    &lt;description&gt;
+      Extremely lengthy, could have used quotation marks but NOOOOOO that&#39;d be too convenient.
+    &lt;/description&gt;
+  &lt;/thing&gt;
+  &lt;thing&gt;
+    &lt;name&gt;West Cookies&lt;/name&gt;
+    &lt;description&gt;
+      Under-cooked Cookies != Good Cookies
+    &lt;/description&gt;
+  &lt;/thing&gt;
+&lt;/stuff_i_hate&gt;
 </code>
             </pre>
           </div>
@@ -895,28 +901,27 @@ etc...
         <!-- If I have time, I might want to add the recreation of popular apps' structure here -->
 
 
-        <!-- Slide 29: The Resource Folder -->
+        <!-- Slide 29: Getting your app to do stuff -->
         <section>
-          <h2>
-            Resource Folder
+          <h1>
+            Getting your app to do stuff
+          </h1>
+          <h2 class="fragment" data-fragment-index="0">
+            <span class="highlight">Like take input, and give output</span>
           </h2>
-          <img class="stretch" data-src="media/resource_expanded.png" alt="res folder completely expanded">
+          <h3 class="fragment" data-fragment-index="1">
+            <span class="lowlight">And possibly even process data, and talk to the network</span>
+          </h3>
           <aside class="notes">
-            <ul>
-              <li>Strings is for localization</li>
-              <li>Drawables is for high/low resolution</li>
-              <li>Styles is for reusing catering to different device styles</li>
-              <li>Layouts is for Orientation/Screen size</li>
-            </ul>
-            Power for Cross platforming
+            And that's really it for GUIs
           </aside>
         </section>
+        
 
-
-        <!-- Slide 30: Activity Code -->
+        <!-- Slide x: Activity Code -->
         <section>
 
-          <!-- Slide 30a: Activity Code -->
+          <!-- Slide xa: Activity Code -->
           <section>
             <h2>
               The Activity Code
@@ -957,41 +962,262 @@ etc...
               </code>
             </pre>
             <aside class="notes">
-              This is where you put all the code for your app. Note the Lifecycle function calls. Important that not all
-              of your code goes here. You can make your own classes, and pass them around.
+              This is where you put all the code for your app. Note the Lifecycle function calls, and what it extends.
+              Important that not all of your code goes here. You can make your own classes, and pass them around.
             </aside>
           </section>
 
-          <!-- Slide 30b: Lifecyle Reference -->
+          <!-- Slide xb: Lifecyle Reference -->
           <section>
             <img class="stretch" data-src="media/lifecycle.png" alt="android lifecycle">
+          </section>
+
+          <!-- Slide xc: Examples of the on onStop function -->
+          <section>
+            <h2>
+              Implementing a Lifecycle Function
+            </h2>
+            <pre class="java">
+<code>@Override
+public void onStop() {
+    super.onStop();
+
+    System.out.println("Hammer time");
+}
+              </code>
+            </pre>
           </section>
         </section>
 
 
-        <!-- Slide 31: Resource Referencing -->
+        <!-- Slide x: Resource Referencing -->
+        <section>
+          <!-- Slide xa: The folder -->
+          <section>
+            <h2>
+              Resource Referencing : The Folder
+            </h2>
+            <img class="stretch" data-src="media/resource_expanded.png" alt="res folder completely expanded">
+            <aside class="notes">
+              <ul>
+                <li>Strings is for localization</li>
+                <li>Drawables is for high/low resolution</li>
+                <li>Styles is for reusing catering to different device styles</li>
+                <li>Layouts is for Orientation/Screen size</li>
+              </ul>
+              Power for Cross platforming
+            </aside>
+          </section>
+
+          <!-- Slide xb: The code -->
+          <section>
+            <h2>
+              Resource Referencing: The Code
+            </h2>
+            <pre class="java">
+  <code>userNameField = (EditText) findViewById(R.id.userName);
+              </code>
+            </pre>
+            <pre class="java fragment" data-fragment-index="0">
+  <code>userNameField.getText().toString();
+              </code>
+            </pre>
+            <!-- Edit Text Source: http://developer.android.com/reference/android/widget/EditText.html -->
+            <aside class="notes">
+              This is where I'll leave you to do your own looking up the documentation because its a good skill and also I
+              can't go over everyting in 1 night.
+            </aside>
+          </section>
+      </section>
+
+
+        <!-- Slide x: Storage Methods -->
+        <section>
+          <!-- Source: http://developer.android.com/guide/topics/data/data-storage.html -->
+          
+          <!-- Slide xa: Data Storage -->
+          <section>
+            <h1>
+              Data Storage
+            </h1>
+            <aside class="notes">
+              Chances are you'll want to make something last over a usage period.
+            </aside>
+          </section>
+
+          <!-- Slide xb: Shared Preferences -->
+          <section>
+            <h2>
+              Shared Preferences
+            </h2>
+            <pre class="java">
+<code>public static final String PREFERENCE_FILE = "MyPrefsFile";</code>
+            </pre>
+            <pre class="java fragment" data-fragment-index="0">
+<code>int toYourAddress = distanceCalculator(...);
+
+SharedPreferences settings = getSharedPreferences(PREFERENCE_FILE, 0);
+SharedPreferences.Editor prefEditor = settings.edit();
+prefEditor.putInt("toYA", toYourAddress);</code>
+            </pre>
+            <pre class="java fragment" data-fragment-index="1">
+<code>SharedPreferences uptownFunk = getSharedPreferences(PREFERENCE_FILE, 0);
+int distanceToYourAddress = uptownFunk.getInt("toYA", DEFAULT_INT);
+// Don't beleive me? Just watch.</code>
+            </pre>
+            <aside class="notes">
+              Boolean, Float, Int, Long, String, String Set
+              <br />
+              getSharedPreferences() comes from a context (your activity)
+              <br />
+              Good for user preferences. Is shared within a context.
+            </aside>
+          </section>
+
+          <!-- Slide xc: External Storage -->
+          <section>
+            <h2>
+              Internal/External Storage
+            </h2>
+            <pre class="java">
+<code>FileOutputStream fileStream =
+    openFileOutput(FILENAME, Context.MODE_PRIVATE);
+fileStream.write(data.getBytes());
+fileStream.close();</code>
+            </pre>
+            <pre class="java">
+<code>FileInputStream fileStream =
+    openFileInput(FILENAME, Context.MODE_PRIVATE);
+something = fileStream.read();
+fileStream.close();</code>
+            </pre>
+            <pre class="java fragment" data-fragment-index="0">
+<code>new File(
+    getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+    "myPicture.png");</code>
+            </pre>
+            <aside class="notes">
+              Internal: Works just like JavaIO. Only accessable to you. Not even user when USB plugged in.
+              <br />
+              External: Requires permission WRITE_EXTERNAL_STORAGE. Can write to SD or just onboard memory.
+              Point is: its public.
+            </aside>
+          </section>
+
+          <!-- Slide xd: Database -->
+          <section>
+            <h2>
+              Database
+            </h2>
+            <img class="stretch" data-src="media/SQLite.png" alt="SQLite Logo">
+            <p>
+              Knowledge Required: SQL
+            </p>
+            <aside class="notes">
+              Good for large amounts of data that can easily be held in a table. Would recommend for locally caching
+              large lists.
+            </aside>
+          </section>
+
+          <!-- Slide xe: Network -->
+          <section>
+            <h2>
+              Network
+            </h2>
+            <pre class="java">
+<code>java.net.*
+android.net.*</code>
+            </pre>
+            <aside class="notes">
+              Not reliable, needs permission.
+            </aside>
+          </section>
+
+        </section>
+
+
+
+        <!-- Slide x: Adapters -->
         <section>
           <h2>
-            Resource Referencing
+            Adapters
           </h2>
-          <pre class="java">
-<code>userNameField = (EditText) findViewById(R.id.userName);
-            </code>
+          <pre class="stretch java">
+<code>private ListView listView;
+private ArrayList&lt;String&gt; footballGamePlaylist;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+
+    // fill data
+    footballGamePlaylist = new ArrayList&lt;String&gt;();
+    for (int i = 0; i &lt; 50; i++) {
+        footballGamePlaylist.add("We Dem Boyz");
+    }
+
+    // prepare adapter
+    ArrayAdapter&lt;String&gt; adapter;
+    adapter = new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_list_item_1, footballGamePlaylist);
+
+    // connect adapter
+    listView.setAdapter(adapter);
+}
+    </code>
           </pre>
-          <pre class="java fragment" data-fragment-index="0">
-<code>userNameField.getText().toString();
-            </code>
-          </pre>
-          <!-- http://developer.android.com/reference/android/widget/EditText.html -->
+        </section>
+
+        <!-- Slide x: Java Libraries -->
+        <section>
+          <h2>
+            And don't forget...
+          </h2>
+          <p>
+            Not everything needs to extend an Android class.
+          </p>
           <aside class="notes">
-            This is where I'll leave you to do your own looking up the documentation because its a good skill and also I
-            can't go over everyting in 1 night.
+            The best code separates functionality, so be sure to keep doing that.
           </aside>
         </section>
 
-        <!-- Slide 32: Storage Methods -->
-        <section>
 
+        <!-- Slide x: Manifest -->
+        <section>
+          <h2>
+            The Manifest
+          </h2>
+          <div class="stretch fragment" data-fragment-index="0">
+            <pre class="stretch xml" style="width: 100%;">
+<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;us.lopreiato.acm_presentation&quot; &gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@drawable/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:theme=&quot;@style/AppTheme&quot; &gt;
+        &lt;activity
+            android:name=&quot;.MainACMActivity&quot;
+            android:label=&quot;@string/app_name&quot; &gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code>
+           </pre>
+          </div>
+          <aside class="notes">
+            We're almost done going through everything you need to know about programming for Android.
+            <br />
+            Simple but important. Tells the OS what you want to do, and how it should interact with your app.
+            <br />
+            Also can declare a use of a feature, library, or permission. Declare as a service.
+          </aside>
         </section>
 
       </div>    <!-- end div="slides" -->
